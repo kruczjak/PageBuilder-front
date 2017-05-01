@@ -5,10 +5,10 @@
   },
   "proxies": {
     "/api/": {
-      "origin": "https://page-builder.vps.kruczjak.pl/"
+      "origin": "https://page-builder.vps.kruczjak.pl/api/"
     },
     "/auth/": {
-      "origin": "https://page-builder.vps.kruczjak.pl/"
+      "origin": "https://page-builder.vps.kruczjak.pl/auth/"
     }
   }
 }
