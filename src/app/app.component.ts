@@ -11,6 +11,9 @@ export class AppComponent {
   constructor(private tokenService: Angular2TokenService) {
     this.tokenService.init({
       apiBase: environment.host,
+      oAuthBase: environment.host,
+      signInRedirect: '/session/sign_in',
+      oAuthWindowType: 'sameWindow',
     });
   }
 }

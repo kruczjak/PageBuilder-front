@@ -5,18 +5,19 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { A2tUiModule, Angular2TokenService } from 'angular2-token';
+import { Angular2TokenService } from 'angular2-token';
+import { OauthCallbackComponent } from './oauth-callback/oauth-callback.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OauthCallbackComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule,
-    A2tUiModule,
+    AppRoutingModule
   ],
   providers: [Angular2TokenService],
   bootstrap: [AppComponent]
