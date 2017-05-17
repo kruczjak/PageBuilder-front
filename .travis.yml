@@ -23,7 +23,7 @@ before_script:
   - yarn global add @angular/cli
 
 script:
-  - ng test
+  - ng test --watch false
   - ng e2e
 
 notifications:
