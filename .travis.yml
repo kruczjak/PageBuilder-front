@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "6.9"
+
+before_script:
+  - yarn global add @angular/cli
+
+script:
+  - ng test
+
+notifications:
+  email:
+    on_failure: change
+    on_success: change
