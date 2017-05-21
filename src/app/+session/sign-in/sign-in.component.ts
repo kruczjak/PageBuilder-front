@@ -6,12 +6,11 @@ import { Angular2TokenService } from 'angular2-token';
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.css']
 })
-export class SignInComponent implements OnInit {
+export class SignInComponent {
 
   constructor(private tokenService: Angular2TokenService) { }
 
-  ngOnInit() {
+  public signIn() {
     this.tokenService.signInOAuth('facebook').subscribe(() => null);
   }
-
 }
