@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Angular2TokenService } from 'angular2-token';
 import { OauthCallbackComponent } from './oauth-callback/oauth-callback.component';
+import { UserService } from './user.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { OauthCallbackComponent } from './oauth-callback/oauth-callback.componen
     HttpModule,
     AppRoutingModule
   ],
-  providers: [Angular2TokenService],
+  providers: [Angular2TokenService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
