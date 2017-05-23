@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Angular2TokenService } from 'angular2-token';
 
 @Component({
@@ -11,6 +11,6 @@ export class SignInComponent {
   constructor(private tokenService: Angular2TokenService) { }
 
   public signIn() {
-    this.tokenService.signInOAuth('facebook').subscribe(() => null);
+    this.tokenService.signInOAuth('facebook');
   }
 }

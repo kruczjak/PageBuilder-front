@@ -8,12 +8,19 @@ import { environment } from '../environments/environment';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private tokenService: Angular2TokenService) {
+  public userData = this.tokenService.currentUserData;
+
+  constructor(public tokenService: Angular2TokenService) {
     this.tokenService.init({
       apiBase: environment.host,
       oAuthBase: environment.host,
       signInRedirect: '/session/sign_in',
+      signOutPath: '/session/sign_in',
       oAuthWindowType: 'sameWindow',
     });
+  }
+
+  public logout() {
+    this.tokenService.signOut();
   }
 }
