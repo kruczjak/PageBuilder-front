@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SignInComponent } from './sign-in.component';
+import { Angular2TokenService } from 'angular2-token';
+import { HttpModule } from '@angular/http';
 
 describe('SignInComponent', () => {
   let component: SignInComponent;
@@ -8,7 +10,9 @@ describe('SignInComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SignInComponent ]
+      imports: [HttpModule],
+      declarations: [ SignInComponent ],
+      providers: [Angular2TokenService],
     })
     .compileComponents();
   }));

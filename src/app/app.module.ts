@@ -7,7 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Angular2TokenService } from 'angular2-token';
 import { OauthCallbackComponent } from './oauth-callback/oauth-callback.component';
-import { UserService } from './user.service';
+import { ProjectsService } from './projects.service';
+import { BsDropdownModule } from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -18,9 +19,10 @@ import { UserService } from './user.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BsDropdownModule.forRoot(),
   ],
-  providers: [Angular2TokenService, UserService],
+  providers: [Angular2TokenService, ProjectsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

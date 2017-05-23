@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectsService } from '../../projects.service';
 
 @Component({
   selector: 'app-dashboard-index',
@@ -6,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard-index.component.css']
 })
 export class DashboardIndexComponent implements OnInit {
+  public projectsObservable = this.projectsService.index();
 
-  constructor() { }
+  constructor(private projectsService: ProjectsService) { }
 
   ngOnInit() {
   }
