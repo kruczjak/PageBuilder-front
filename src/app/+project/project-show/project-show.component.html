@@ -1,0 +1,22 @@
+{{ project | json }}
+
+<div class="row">
+  <div class="col-md-10">
+    <h2>{{ project?.name }} <small>initialized: {{ project?.initialized_at | amCalendar }}</small></h2>
+  </div>
+
+  <div class="col-md-2">
+    <a [href]="'api/builds/' + project?.uuid" class="btn btn-primary btn-sm" target="_blank">Download generated zip</a>
+    <br />
+    Last rebuilt: {{ project?.built_at | amCalendar }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-3">
+    Files tree
+  </div>
+  <div class="col-md-9">
+    Editor
+  </div>
+</div>
