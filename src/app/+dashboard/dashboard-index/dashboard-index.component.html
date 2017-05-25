@@ -1,11 +1,27 @@
 <div class="row">
   <div class="col-md-12">
-    <button class="btn btn-primary">Create new</button>
+    <button class="btn btn-primary" (click)="smModal.show()">New project</button>
   </div>
 </div>
 <div class="row">
   <div [routerLink]="['/', 'project', project.id]" *ngFor="let project of projectsObservable | async" class="col-md-4">
     {{ project.uuid }}
     {{ project.name }}
+  </div>
+</div>
+ 
+<div bsModal #smModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Create a new project</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="smModal.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-project-form (afterSubmit)="smModal.hide(); refreshProjectList()"></app-project-form>
+      </div>
+    </div>
   </div>
 </div>

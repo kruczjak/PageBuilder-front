@@ -12,6 +12,11 @@ export class ProjectsService {
     return this.http.get(this.BASE_URL).map((response) => response.json());
   }
 
+  public create(newProject: any): Observable<any> {
+    return this.http.post(this.BASE_URL, {project: newProject})
+      .map((response) => response.json());
+  }
+
   public show(id: string): Observable<any> {
     return this.http.get(`${this.BASE_URL}/${id}`).map((response) => response.json());
   }
