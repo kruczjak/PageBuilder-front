@@ -11,4 +11,8 @@ export class ProjectsService {
   public index(): Observable<any> {
     return this.http.get(this.BASE_URL).map((response) => response.json());
   }
+
+  public show(id: string): Observable<any> {
+    return this.http.get(`${this.BASE_URL}/${id}`).map((response) => response.json());
+  }
 }
