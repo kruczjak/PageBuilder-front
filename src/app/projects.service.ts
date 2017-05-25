@@ -11,4 +11,9 @@ export class ProjectsService {
   public index(): Observable<any> {
     return this.http.get(this.BASE_URL).map((response) => response.json());
   }
+
+  public create(newProject: any): Observable<any> {
+    return this.http.post(this.BASE_URL, {project: newProject})
+      .map((response) => response.json());
+  }
 }

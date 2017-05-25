@@ -11,6 +11,10 @@ export class DashboardIndexComponent implements OnInit {
 
   constructor(private projectsService: ProjectsService) { }
 
+  public refreshProjectList() {
+    this.projectsObservable = this.projectsService.index();
+  }
+
   ngOnInit() {
   }
 
