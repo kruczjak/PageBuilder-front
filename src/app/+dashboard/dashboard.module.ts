@@ -6,6 +6,7 @@ import { DashboardIndexComponent } from './dashboard-index/dashboard-index.compo
 import { ProjectFormComponent } from './project-form/project-form.component';
 import { ModalModule } from "ngx-bootstrap";
 import { ReactiveFormsModule } from "@angular/forms";
+import { MomentModule } from 'angular2-moment';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import { ReactiveFormsModule } from "@angular/forms";
     DashboardRoutingModule,
     ModalModule,
     ReactiveFormsModule,
+    MomentModule,
   ],
   declarations: [DashboardIndexComponent, ProjectFormComponent]
 })

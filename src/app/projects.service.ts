@@ -20,4 +20,10 @@ export class ProjectsService {
   public show(id: string): Observable<any> {
     return this.http.get(`${this.BASE_URL}/${id}`).map((response) => response.json());
   }
+
+  public listDirectories(projectId: string): Observable<any> {
+    return this.http.get(`${this.BASE_URL}/${projectId}/directory_tree`)
+      .catch((response) => Observable.throw('Errors while fetching dirs'))
+      .map((response) => response.json());
+  }
 }
