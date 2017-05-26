@@ -3,13 +3,15 @@
     <button class="btn btn-primary" (click)="smModal.show()">New project</button>
   </div>
 </div>
-<div class="row">
+<div class="row projects">
   <div [routerLink]="['/', 'project', project.id]" *ngFor="let project of projectsObservable | async" class="col-md-4">
-    {{ project.uuid }}
-    {{ project.name }}
+    <div class="jumbotron">
+      <h2 >{{ project.name }}</h2>
+      <p>Project last updated at: {{ project.updated_at | amCalendar }}</p>
+    </div>
   </div>
 </div>
- 
+
 <div bsModal #smModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
