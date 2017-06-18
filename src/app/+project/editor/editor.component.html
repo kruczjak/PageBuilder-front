@@ -1,3 +1,14 @@
-<p>
-  editor works!
-</p>
+<div class="row" *ngIf="tabs != null">
+  <div class="col-md-12">
+    <tabset>
+      <tab *ngFor="let tabz of tabs"
+           [heading]="tabz.title"
+           [active]="tabz.active"
+           (select)="tabz.active = true"
+           (deselect)="tabz.active = false"
+           [removable]="true">
+        <app-file></app-file>
+      </tab>
+    </tabset>
+  </div>
+</div>
