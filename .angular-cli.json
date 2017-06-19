@@ -21,7 +21,8 @@
       "styles": [
         "styles.css",
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "../node_modules/pace/themes/blue/pace-theme-minimal.css"
+        "../node_modules/pace/themes/blue/pace-theme-minimal.css",
+        "../node_modules/codemirror/lib/codemirror.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

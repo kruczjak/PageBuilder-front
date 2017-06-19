@@ -137,6 +137,10 @@
     magic-string "^0.19.0"
     source-map "^0.5.6"
 
+"@types/codemirror@^0.0.40":
+  version "0.0.40"
+  resolved "https://registry.yarnpkg.com/@types/codemirror/-/codemirror-0.0.40.tgz#0868ed9ba5bf3ef8072de80e245ecf4a8f0bbdfd"
+
 "@types/jasmine@2.5.38":
   version "2.5.38"
   resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-2.5.38.tgz#a4379124c4921d4e21de54ec74669c9e9b356717"

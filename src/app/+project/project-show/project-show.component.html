@@ -12,9 +12,12 @@
 
 <div class="row" *ngIf="directoryListObservable | async; let directoryList">
   <div class="col-md-3 directory-tree">
-    <tree-root [nodes]="[directoryList]"></tree-root>
+    <tree-root [nodes]="[directoryList]"
+               (activate)="onItemActivated($event)"
+               [focused]="true">
+    </tree-root>
   </div>
   <div class="col-md-9">
-    Editor
+    <app-editor></app-editor>
   </div>
 </div>
