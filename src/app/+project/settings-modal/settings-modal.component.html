@@ -1,0 +1,27 @@
+<div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Settings</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="closeModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="form" (submit)="onSubmit()">
+          <div class="form-group">
+            <label class="control-label">Remote url</label>
+            <input type="text" formControlName="git_remote_url" class="form-control" />
+          </div>
+
+          <div class="form-group">
+            <label class="control-label">SSH key</label>
+            <textarea formControlName="git_sshkey" class="form-control"></textarea>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

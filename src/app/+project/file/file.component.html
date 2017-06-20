@@ -1,3 +1,17 @@
-<form [formGroup]="form">
-  <textarea [appCodeMirror]="{}" formControlName="file" class="form-control"></textarea>
+<form [formGroup]="form" (submit)="onSubmit()">
+  <div class="row">
+    <textarea [appCodeMirror]="{}"
+              formControlName="file"
+              class="form-control">
+    </textarea>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="pull-right">
+        <button (click)="removeFile()" type="button" class="btn btn-danger">Remove</button>
+        <button type="submit" class="btn btn-success">Save</button>
+      </div>
+    </div>
+  </div>
+
 </form>

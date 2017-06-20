@@ -1,23 +1,33 @@
-<div class="row">
-  <div class="col-md-10">
-    <h2>{{ project?.name }} <small>initialized: {{ project?.initialized_at | amCalendar }}</small></h2>
+<ng-container *ngIf="project">
+  <div class="row">
+    <div class="col-md-8">
+      <h2>
+        {{ project?.name }}
+        <button type="button" class="btn btn-default btn-xs" (click)="settingsModal.showModal()">Settings</button>
+        <small>initialized: {{ project?.initialized_at | amCalendar }}</small>
+      </h2>
+    </div>
+
+    <div class="col-md-4">
+      <button (click)="regenerateProject()" class="btn btn-primary btn-sm">Regenerate project</button>
+      <a [href]="'api/builds/' + project?.uuid" class="btn btn-primary btn-sm" target="_blank">Download generated zip</a>
+      <br />
+      Last rebuilt: {{ project?.built_at | amCalendar }}
+    </div>
   </div>
 
-  <div class="col-md-2">
-    <a [href]="'api/builds/' + project?.uuid" class="btn btn-primary btn-sm" target="_blank">Download generated zip</a>
-    <br />
-    Last rebuilt: {{ project?.built_at | amCalendar }}
+  <div class="row" *ngIf="directoryListObservable | async; let directoryList">
+    <div class="col-md-3 directory-tree">
+      <tree-root [nodes]="[directoryList]"
+                 (activate)="onItemActivated($event)"
+                 [focused]="true">
+      </tree-root>
+    </div>
+    <div class="col-md-9">
+      <app-editor (refreshList)="refreshDirectoryList()" [projectId]="project?.id"></app-editor>
+    </div>
   </div>
-</div>
 
-<div class="row" *ngIf="directoryListObservable | async; let directoryList">
-  <div class="col-md-3 directory-tree">
-    <tree-root [nodes]="[directoryList]"
-               (activate)="onItemActivated($event)"
-               [focused]="true">
-    </tree-root>
-  </div>
-  <div class="col-md-9">
-    <app-editor></app-editor>
-  </div>
-</div>
+  <app-settings-modal [projectId]="project.id" #settingsModal></app-settings-modal>
+  <app-git-bar [projectId]="project.id"></app-git-bar>
+</ng-container>
