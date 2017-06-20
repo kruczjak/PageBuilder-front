@@ -1,13 +1,18 @@
-<div class="row" *ngIf="tabs != null">
+<div class="row" *ngIf="tabs != null && projectId">
   <div class="col-md-12">
     <tabset>
-      <tab *ngFor="let tabz of tabs"
-           [heading]="tabz.title"
+      <tab *ngFor="let tabz of tabs; index as i"
            [active]="tabz.active"
            (select)="tabz.active = true"
            (deselect)="tabz.active = false"
+           (removed)="removeTab(i)"
            [removable]="true">
-        <app-file></app-file>
+
+        <ng-template tabHeading>{{ tabz.title }}</ng-template>
+        <app-file [path]="tabz.path"
+                  (remove)="onFileRemoved(i)"
+                  [projectId]="projectId"></app-file>
+
       </tab>
     </tabset>
   </div>

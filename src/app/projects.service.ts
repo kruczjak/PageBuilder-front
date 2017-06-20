@@ -26,4 +26,8 @@ export class ProjectsService {
       .catch((response) => Observable.throw('Errors while fetching dirs'))
       .map((response) => response.json());
   }
+
+  public regenerateProject(projectId: string): Observable<any> {
+    return this.http.post(`${this.BASE_URL}/${projectId}/regenerate`, {}).map((response) => response.json());
+  }
 }

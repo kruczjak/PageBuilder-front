@@ -9,6 +9,8 @@ import { Angular2TokenService } from 'angular2-token';
 import { OauthCallbackComponent } from './oauth-callback/oauth-callback.component';
 import { ProjectsService } from './projects.service';
 import { BsDropdownModule, ModalModule, TabsModule } from 'ngx-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToasterModule } from 'angular2-toaster';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { BsDropdownModule, ModalModule, TabsModule } from 'ngx-bootstrap';
     OauthCallbackComponent,
   ],
   imports: [
+    BrowserAnimationsModule,
+    ToasterModule,
     BrowserModule,
     FormsModule,
     HttpModule,
