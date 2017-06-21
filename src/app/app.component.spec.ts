@@ -4,6 +4,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { Angular2TokenService } from 'angular2-token';
 import { HttpModule } from '@angular/http';
+import { ToasterModule } from "angular2-toaster";
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -11,6 +12,7 @@ describe('AppComponent', () => {
       imports: [
         RouterTestingModule,
         HttpModule,
+        ToasterModule,
       ],
       declarations: [
         AppComponent

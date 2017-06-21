@@ -1,11 +1,14 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { SettingsService } from './settings.service';
+import { Angular2TokenService } from "angular2-token";
+import { HttpModule } from "@angular/http";
 
 describe('SettingsService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [SettingsService]
+      imports: [HttpModule],
+      providers: [SettingsService, Angular2TokenService]
     });
   });
 
