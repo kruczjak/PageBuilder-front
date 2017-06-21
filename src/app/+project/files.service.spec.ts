@@ -1,11 +1,14 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { FilesService } from './files.service';
+import { Angular2TokenService } from "angular2-token";
+import { HttpModule } from "@angular/http";
 
 describe('FilesService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [FilesService]
+      imports: [HttpModule],
+      providers: [FilesService, Angular2TokenService]
     });
   });
 

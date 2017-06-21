@@ -10,7 +10,7 @@ import { ToasterConfig } from 'angular2-toaster';
 })
 export class AppComponent {
   public userData = this.tokenService.currentUserData;
-  public toasterconfig : ToasterConfig = new ToasterConfig({ animation: 'slideUp' });
+  public toasterconfig: ToasterConfig = new ToasterConfig({ animation: 'slideUp' });
 
   constructor(public tokenService: Angular2TokenService) {
     this.tokenService.init({
