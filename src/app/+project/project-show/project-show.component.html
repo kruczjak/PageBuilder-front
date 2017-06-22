@@ -4,15 +4,22 @@
       <h2>
         {{ project?.name }}
         <button type="button" class="btn btn-default btn-xs" (click)="settingsModal.showModal()">Settings</button>
-        <small>initialized: {{ project?.initialized_at | amCalendar }}</small>
-      </h2>
+        </h2>
     </div>
+  </div>
 
-    <div class="col-md-4">
-      <button (click)="regenerateProject()" class="btn btn-primary btn-sm">Regenerate project</button>
-      <a [href]="'api/builds/' + project?.uuid" class="btn btn-primary btn-sm" target="_blank">Download generated zip</a>
-      <br />
-      Last rebuilt: {{ project?.built_at | amCalendar }}
+  <div class="row">
+    <div class="col-md-12">
+      <h4>
+        Initialized: {{ project?.initialized_at | amCalendar }}
+      </h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h4>
+        Last rebuilt: {{ project?.built_at | amCalendar }}
+      </h4>
     </div>
   </div>
 
@@ -30,4 +37,12 @@
 
   <app-settings-modal [projectId]="project.id" #settingsModal></app-settings-modal>
   <app-git-bar [projectId]="project.id"></app-git-bar>
+
+  <div class="row" style="margin-top: 10px">
+    <div class="col-md-4">
+      <button (click)="regenerateProject()" class="btn btn-primary btn-sm">Regenerate project</button>
+      <a [href]="'api/builds/' + project?.uuid" class="btn btn-primary btn-sm" target="_blank">Download generated zip</a>
+      <br />
+    </div>
+  </div>
 </ng-container>
